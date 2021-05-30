@@ -7,6 +7,8 @@ This action should run on push, and automatically merge PRs to target branches u
 - The PR does not have any merge conflicts
 
 ## Steps
-Find examples of auto-merging actions
-Learn about conditional running.
-Implement in NodeJS
+- For processing PR title, see [article on script hardening](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#good-practices-for-mitigating-script-injection-attacks)
+- For other action variables, see [docs on variables](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context)
+- For conditioning running, see [if syntax](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#example-expression-in-an-if-conditional)
+- Might work in Node or Bash
+- For auto-merge action, look at [Auto-Merge Pull Request](https://github.com/marketplace/actions/auto-merge-pull-request)
