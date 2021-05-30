@@ -1,0 +1,24 @@
+{
+  "name": "yolo-merge",
+  "version": "1.0.0",
+  "description": "GitHub Action to Automatically Merge based on PR Title &amp; Owner ## Goals This action should run on push, and automatically merge PRs to target branches under the following conditions: - The author of the PR is the owner of the repo - The PR title contains the phrase \"YOLO!\" - The PR does not have any merge conflicts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtfoley/yolo-merge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtfoley/yolo-merge/issues"
+  },
+  "homepage": "https://github.com/mtfoley/yolo-merge#readme",
+  "dependencies": {
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0"
+  }
+}
