@@ -1,0 +1,16 @@
+name: yolo-merge
+description: >
+  GitHub Action to Automatically Merge based on PR Title & Owner.
+author: mtfoley
+branding:
+  icon: git-pull-request
+  color: purple
+inputs:
+  token:
+    required: true
+    description: >
+      A GitHub Token other than the default `GITHUB_TOKEN` needs to be specified in order to be able to trigger other workflows.
+    default: ${{ github.token }}
+runs:
+  using: 'node12'
+  main: 'action.js'
