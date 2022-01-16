@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
+
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
@@ -13,3 +14,14 @@ try {
 } catch (error) {
   core.setFailed(error.message);
 }
+
+// @mtfoley does this look right?
+function userIsTeamMember(login: string, owner: string) {
+  if (login === owner) return true
+  const {data: userOrgs} = await client.request('GET /users/{user}/orgs', {
+    user: login
+  })
+  return userOrgs.some((userOrg: {login: string}) => {
+    return userOrg.login === owner
+  })
+} return userIsTeamMember(github.context.actor, github.context.repo.owner)
