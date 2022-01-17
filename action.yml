@@ -16,11 +16,9 @@ outputs:
   merged:
     description: >
       If the PR was merged, this will be true.
-    value: ${{ github.pr.merged }}
   mergedError: 
     description: >
       If the PR was not merged, this will be the error message.
-    value: ${{ github.pr.mergedError }}
 branding:
   icon: git-pull-request
   color: purple
