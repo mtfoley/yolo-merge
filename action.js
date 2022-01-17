@@ -1,6 +1,9 @@
+// Create a github action that checks if the pr is opened by the reop owener or a team member
+// If the pr is opened by the reop owener or a team member, it will be merged
+
 const core = require('@actions/core');
 const github = require('@actions/github');
-
+const { Octokit } = require('@octokit/action');
 
 async function run(){
   try {
@@ -15,16 +18,4 @@ async function run(){
     core.setFailed(error.message);
   }  
 }
-
- // @mtfoley does this look right?
- function userIsTeamMember(login: string, owner: string) {
-  if (login === owner) return true
-  const {data: userOrgs} = await client.request('GET /users/{user}/orgs', {
-    user: login
-  })
-  return userOrgs.some((userOrg: {login: string}) => {
-    return userOrg.login === owner
-  })
-} return userIsTeamMember(github.context.actor, github.context.repo.owner)
-
 run()

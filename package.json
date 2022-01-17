@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mtfoley/yolo-merge#readme",
   "dependencies": {
     "@actions/core": "^1.3.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^5.0.0",
+    "@octokit/action": "^3.18.0"
   }
 }

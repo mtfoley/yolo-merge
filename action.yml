@@ -12,5 +12,5 @@ inputs:
       A GitHub Token other than the default `GITHUB_TOKEN` needs to be specified in order to be able to trigger other workflows.
     default: ${{ github.token }}
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'action.js'
