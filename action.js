@@ -6,7 +6,10 @@ async function run(){
 //    const token = core.getInput("token");
 //    const octokit = github.getOctokit(token);
     const context = github.context;
-    core.debug(JSON.stringify(context.payload));
+    const title = context.payload.pull_request.title;
+    const {login} = context.payload.pull_request.user;
+    const {owner:{login:repoOwner},name:repoName} = context.payload.repository;
+    core.debug(JSON.stringify({title,login,repoOwner,repoName}));
   } catch (error) {
     core.setFailed(error.message);
   }  
